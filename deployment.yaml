@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: uts-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: uts-app
+
+  template:
+    metadata:
+      labels:
+        app: uts-app
+
+    spec:
+      containers:
+      - name: uts-app
+        image: uts-devops
+        ports:
+        - containerPort: 3000
