@@ -22,3 +22,11 @@ jobs:
 
       - name: Run Test
         run: npm test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy staging
+        run: echo "Deploy ke staging berhasil"
